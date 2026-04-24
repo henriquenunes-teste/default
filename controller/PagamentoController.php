@@ -10,7 +10,7 @@ class PagamentoController extends Controller{
         $dados["taxa"] = 0;
         $dados["data"] = "01-01-2026";
 
-        include "view/pagamento/formulario-pagamento.php";
+        $this->view("pagamento/formulario-pagamento",compact('dados'));
     }
 
 
@@ -29,24 +29,24 @@ class PagamentoController extends Controller{
             $model->update($dados);
         }
 
-        header("location: listar");
+        $this->redirect("pagamento/listar");
     }
 
     function listar(){
         $model = new Pagamento();
         $pagamentos = $model->getAll();
-        include "view/pagamento/listagem-pagamento.php";
+        $this->view("pagamento/listagem-pagamento",compact('pagamentos'));
     }
     
     function alterar($id){
         $model = new Pagamento();
         $dados = $model->getById($id);
-        include "view/pagamento/formulario-pagamento.php";
+        $this->view("pagamento/formulario-pagamento",compact('dados'));
     }
 
     function deletar($id){
         $model = new Pagamento();
         $model->delete($id);
-         header('location: '.APP.'/pagamento/listar'); 
+        $this->redirect("pagamento/listar"); 
     }
 }

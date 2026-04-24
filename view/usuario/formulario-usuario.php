@@ -1,5 +1,5 @@
 
-    <h1>Formulario</h1>
+    <h1>Usuário</h1>
 
     <form action="<?php echo APP."/usuario/gravar"?>" method="post">
         <div>

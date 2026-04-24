@@ -5,7 +5,7 @@ class ProdutoController extends Controller{
     function listar(){
         $model = new Produto();
         $produtos = $model->getAll();
-        include "view/produto/listagem-produto.php";
+        $this->view("produto/listagem-produto",compact('produtos'));
     }
 
     function novo(){
@@ -15,7 +15,7 @@ class ProdutoController extends Controller{
         $dados["quantidade"] = 0;
         $dados["preco"] = 0;
 
-        include "view/produto/formulario-produto.php";
+        $this->view("produto/formulario-produto",compact('dados'));
     }
 
     function gravar(){
@@ -33,18 +33,18 @@ class ProdutoController extends Controller{
             $model->update($dados);
         }
 
-        header("location:".APP."/produto/listar");
+        $this->redirect("produto/listar");
     }
 
     function editar($id){
         $model = new Produto();
         $dados = $model->getById($id);
-        include "view/produto/formulario-produto.php";
+        $this->view("produto/formulario-produto",compact("dados"));
     }
 
     function deletar($id){
         $model = new Produto();
         $model->delete($id);
-        header("location:".APP."/produto/listar");
+        $this->redirect("produto/listar");
     }
 }

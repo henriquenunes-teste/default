@@ -5,7 +5,7 @@
     function listar() {
        $model = new Categoria();
        $categorias = $model->getAll(); 
-       include "view/categoria/listagem_categoria.php";
+       $this->view("categoria/listagem_categoria",compact('categorias'));
     }
 
     function novo() {
@@ -13,7 +13,7 @@
         $dados['id'] = 0;
         $dados['nome']  = "";
         $dados['cor'] = "";
-        include "view/categoria/formulario_categoria.php";    
+        $this->view("categoria/formulario_categoria",compact('dados'));    
     }
 
     function gravar() {
@@ -29,7 +29,7 @@
           $model->update($dados);
         }
         // header location funciona como redirecionador
-        header('location: listar');
+        $this->redirect('categoria/listar');
       
 
     }
@@ -37,13 +37,13 @@
     function editar($id) {
         $model = new Categoria();
         $dados = $model->getById($id);
-        include "view/categoria/formulario_categoria.php";              
+        $this->view('categoria/formulario_categoria',compact('dados'));             
     }
 
     function excluir($id) {
         $model = new Categoria();
         $model->delete($id);
-        header('location: '.APP.'/categoria/listar'); 
+        $this->redirect("categoria/listar"); 
     }
   }
 ?>

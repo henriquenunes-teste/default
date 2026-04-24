@@ -40,7 +40,7 @@ abstract class Model {
         return $dados;
     }
 
-    function delete($id){
+    public function delete($id){
         $conexao = $this->getConnection();
         $resultado = $conexao->prepare("DELETE FROM $this->tabela WHERE id=:id");
         $resultado->bindParam(":id",$id);

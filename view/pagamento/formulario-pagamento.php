@@ -1,4 +1,4 @@
-
+    <h1>Pagamentos</h1>
     <form action="<?php echo APP.'/pagamento/gravar'?>" method="post">
         <div>
             <label for="id" class="form-label">ID</label>

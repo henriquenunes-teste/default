@@ -5,7 +5,7 @@
         function listar(){
             $usuario = new Usuario();
             $usuarios = $usuario->getAll();
-            include "view/usuario/listagem-usuarios.php";
+            $this->view("usuario/listagem-usuarios",compact("usuarios"));
         }
 
         function novo(){
@@ -14,7 +14,7 @@
             $data["nome"]="";
             $data["senha"]="";
 
-            include "view/usuario/formulario-usuario.php";
+            $this->view("usuario/formulario-usuario",compact("data"));
         }
 
         function gravar(){
@@ -27,22 +27,35 @@
 
             if($data["id"] == 0){
                 $model->insert($data);
+                $this->redirect("usuario/listar");
             }else{
-                $model->update($data);
+                $result = $model->update($data);
+
+                if($result){
+                    $this->redirect("usuario/listar");
+                }else{
+                    echo "<script>alert('Existe carrinhos que dependem deste usuario!'); window.location.href='/saborLoja/usuario/listar';</script>";
+                    exit();
+                }
             }
 
-            header("location: ".APP."/usuario/listar");
+            
         }
 
         function editar($id){
             $usuario = new Usuario();
             $data = $usuario->getById($id);
-            include "view/usuario/formulario-usuario.php";
+            $this->view("usuario/formulario-usuario",compact("data"));
         }
 
         function deletar($id){
             $usuario = new Usuario();
-            $usuario->delete($id);
-            header("location: ".APP."/usuario/listar");
+            $result = $usuario->delete($id);
+            if($result){
+                $this->redirect("usuario/listar");
+            }else{
+                echo "<script>alert('Existe carrinhos que dependem deste usuario!'); window.location.href='/saborLoja/usuario/listar';</script>";
+                exit();
+            }
         }
     }

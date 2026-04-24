@@ -1,5 +1,5 @@
 
-    <h1>Listagem de usuarios</h1>
+    <h1>Usuários</h1>
     <a href="<?php echo APP."/usuario/novo"; ?>" class="btn btn-success">Novo</a>
     <a href="<?php echo APP."/home"; ?>" class="btn btn-success">Voltar</a>
     <table class="table">

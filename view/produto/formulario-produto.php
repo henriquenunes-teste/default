@@ -1,4 +1,4 @@
-
+    <h1>Produtos</h1>
     <form action="<?php echo APP.'/produto/gravar'?>" method="post">
         <div>
             <label for="id" class="form-label">ID</label>

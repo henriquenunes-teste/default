@@ -22,7 +22,7 @@
                         <tr>
                             <td>{$carrinho["id"]}</td>
                             <td>{$carrinho["total"]}</td>
-                            <td>".$model->usuario($carrinho["usuario_id"])["nome"]."</td>
+                            <td>".$model->usuario()["user_name"]."</td>
                             <td><a href=".APP."/carrinho/editar/".$carrinho["id"]." class='btn btn-primary'>Editar</a></td>
                             <td><a href=".APP."/carrinho/deletar/".$carrinho["id"]." class='btn btn-danger'>Deletar</a></td>
                         <tr>

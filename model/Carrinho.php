@@ -5,12 +5,22 @@ class Carrinho extends Model {
     protected $tabela = "carrinho";
     protected $orderBy = "total";
 
-    public function usuario($id){
-        return $this->belongs_to('usuarios','id',$id);
+    public function usuario(){
+        $sql = "SELECT usuarios.nome AS user_name FROM usuarios INNER JOIN {$this->tabela} ON  usuarios.id = {$this->tabela}.usuario_id";
+
+        $con = $this->getConnection();
+
+        $stmt = $con->prepare($sql);
+
+        $stmt->execute();
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function itens($id){
-        return  $this->has_many('itens','carrinho_id',$id);
+    
+
+    public function itens(){
+        
     }
 
 }

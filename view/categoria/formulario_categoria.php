@@ -11,7 +11,7 @@
         </div>
         <div class="mb-3">
             <label for="cor" class="form-label">Cor</label>
-            <input type="cor" class="form-control" id="cor" name="cor" value="<?php echo $dados['cor']; ?>">
+            <input type="color" class="form-control" id="cor" name="cor" value="<?php echo $dados['cor']; ?>">
         </div>
         <button type="submit" class="btn btn-primary">Gravar</button>
     </form>
