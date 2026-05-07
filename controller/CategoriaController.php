@@ -18,6 +18,9 @@
 
     function gravar() {
         $dados = array();
+
+        
+
         $dados['id'] = $_POST['id'];
         $dados['nome'] = $_POST['nome'];
         $dados['cor'] = $_POST['cor'];

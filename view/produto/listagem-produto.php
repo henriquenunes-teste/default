@@ -6,6 +6,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Foto</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Preco</th>
                 <th scope="col">Editar</th>
@@ -14,10 +15,21 @@
         </thead>
         <tbody>
             <?php 
+
+
                 foreach($produtos as $produto){
+                    // Pega o caminho do app
+                     $caminho = APP;
+                     // é diferente
+                    if ($produto['foto'] != "") {
+                        // Coloca uma imagem
+                        $imagem = "<img src='$caminho/imagens/{$produto['foto']}' style='width: 100px; height: 100px; object-fit: cover'>";
+                    }
+
                     echo "
                         <tr>
                             <td>".$produto["id"]."</td>
+                            <td>".$imagem."</td>
                             <td>".$produto["nome"]."</td>
                             <td>".$produto["quantidade"]."</td>
                             <td>".$produto["preco"]."</td>
