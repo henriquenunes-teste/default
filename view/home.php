@@ -1,3 +1,3 @@
-<div class="container-fluid bg-warning-subtle">
+<div class="container-fluid">
     <h1>Hello</h1>
 </div>
