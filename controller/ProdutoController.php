@@ -10,6 +10,19 @@ class ProdutoController extends Controller{
 
     function novo(){
         $dados = [];
+         if($_FILES["foto"] && $_FILES["foto"]["name"]){
+          $arquivo = $_FILES["foto"];
+
+          $partes = explode('.',$arquivo['name']);
+          $nome = md5(time()).".".$partes[1];
+          move_uploaded_file($arquivo["tmp_name"],"uploads/".$nome);
+
+          if($_POST["foto"] != ""){
+            unlink("imagens/".$_POST["foto"]);
+          }
+
+          $dados["foto"] = $nome; 
+        }
         $dados["id"] = 0;
         $dados["nome"] = "";
         $dados["quantidade"] = 0;
