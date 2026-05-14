@@ -1,16 +1,15 @@
-
+<div class="container-fluid">
+    <h1>Carrinho</h1>
     <form action="<?php echo APP."/carrinho/gravar"; ?>" method="post">
-        <div>
+        <div class="mb-3">
             <label for="id" class="form-label">ID:</label>
             <input readonly type="number" value="<?php echo $dados["id"]; ?>" name="id" class="form-control">
         </div>
-        <div>
+        <div class="mb-3">
             <label for="total" class="form-label">Total</label>
             <input type="number" value="<?php echo $dados["total"] ?>" name="total" class="form-control mb-3" step="0.01">
         </div>
-
-
-        <div>
+        <div class="mb-3">
             <select name="usuario_id" class='form-select mb-3' >
                 <?php
                     foreach($usuarios as $usuario){
@@ -21,7 +20,6 @@
                 ?>
             </select>
         </div>
-
-
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
+</div>
