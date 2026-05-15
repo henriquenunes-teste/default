@@ -23,7 +23,9 @@
                      // é diferente
                     if ($produto['foto'] != "") {
                         // Coloca uma imagem
-                        $imagem = "<img src='$caminho/imagens/{$produto['foto']}' style='width: 100px; height: 100px; object-fit: cover'>";
+                        $imagem = "<img src='$caminho/uploads/{$produto['foto']}' style='width: 100px; height: 100px; object-fit: cover'>";
+                    }else{
+                        $imagem = "<img src='$caminho/uploads/anonimo.png' style='width: 100px; height: 100px; object-fit: cover'>";
                     }
 
                     echo "

@@ -1,8 +1,14 @@
     <h1>Produtos</h1>
-    <form action="<?php echo APP.'/produto/gravar'?>" method="post">
+    <form action="<?php echo APP.'/produto/gravar'?>" method="post" enctype="multipart/form-data">
         <div>
             <label for="id" class="form-label">ID</label>
             <input readonly type="number" class="form-control" name="id" value="<?php echo $dados["id"] ?>">
+        </div>
+
+        <div>
+            <img src="<?php if($dados["foto"] != ""){ echo $dados["foto"]; }else{ echo APP."/uploads/anonimo.png"; }  ?>" alt="">
+            <label for="foto" class="form-label">Foto</label>
+            <input type="file" class="form-control" name="foto">
         </div>
 
         <div>

@@ -6,9 +6,9 @@ abstract class Model {
     function getConnection(){
         $host = 'localhost';
         $port = '5432';
-        $dbname = 'test';
+        $dbname = 'web2a2';
         $user = 'postgres';
-        $password = 'senha123';
+        $password = 'postgresql';
 
         try {
             $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
