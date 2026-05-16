@@ -3,9 +3,13 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 
+
+
 define('APP','http://localhost/default');
 
 include "autoload.php";
+
+
 
 if(isset($_GET["url"]) && !empty($_GET["url"]) && $_GET["url"] != "index"){
     $url = $_GET["url"];

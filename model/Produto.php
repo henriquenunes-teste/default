@@ -6,7 +6,7 @@ class Produto extends Model {
     protected $orderBy = "nome";
 
     public function categorias(){
-       $sql = "SELECT categoria.*,produtos.nome FROM categoria INNER JOIN produto_categoria ON categoria.id = produto_categoria.categoria_id INNER JOIN produtos ON produtos.id = produto_categoria.produtos_id";
+       $sql = "SELECT categoria.*,produtos.nome AS produto_nome FROM categoria INNER JOIN produto_categoria ON categoria.id = produto_categoria.categoria_id INNER JOIN produtos ON produtos.id = produto_categoria.produto_id";
 
         $pdo = $this->getConnection();
 

@@ -14,6 +14,7 @@ class ProdutoController extends Controller{
         $dados["nome"] = "";
         $dados["quantidade"] = 0;
         $dados["preco"] = 0;
+        $dados["foto"] = "";
 
         $this->view("produto/formulario-produto",compact('dados'));
     }

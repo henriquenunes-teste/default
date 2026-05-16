@@ -4,11 +4,15 @@ abstract class Model {
     protected $orderBy = "";
 
     function getConnection(){
-        $host = 'localhost';
-        $port = '5432';
-        $dbname = 'web2a2';
-        $user = 'postgres';
-        $password = 'postgresql';
+
+        $data = Config::get_config();
+
+
+        $host = $data["host"];
+        $port = $data["port"];
+        $dbname = $data["db_name"];
+        $user = $data["user"];
+        $password = $data["password"];
 
         try {
             $dsn = "pgsql:host=$host;port=$port;dbname=$dbname";
