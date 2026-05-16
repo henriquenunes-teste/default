@@ -1,7 +1,7 @@
 {
-    "host":"",
-    "port": "",
-    "dbname": "",
-    "user": "",
-    "password": ""
+    "host":"localhost",
+    "port": "5432",
+    "dbname": "novo_test",
+    "user": "postgres",
+    "password": "senha123"
 }

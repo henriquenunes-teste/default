@@ -10,7 +10,7 @@ abstract class Model {
 
         $host = $data["host"];
         $port = $data["port"];
-        $dbname = $data["db_name"];
+        $dbname = $data["dbname"];
         $user = $data["user"];
         $password = $data["password"];
 

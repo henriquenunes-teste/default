@@ -23,15 +23,17 @@ class ProdutoController extends Controller{
         $model = new Produto();
         
         $dados = [];
+
         if($_FILES["foto"] && $_FILES["foto"]["name"]){
           $arquivo = $_FILES["foto"];
 
           $partes = explode('.',$arquivo['name']);
           $nome = md5(time()).".".$partes[1];
+
           move_uploaded_file($arquivo["tmp_name"],"uploads/".$nome);
 
-          if($_POST["foto"] != ""){
-            unlink("imagens/".$_POST["foto"]);
+          if($_POST["foto_atual"] != ""){
+            unlink("uploads/".$_POST["foto_atual"]);
           }
 
           $dados["foto"] = $nome; 
