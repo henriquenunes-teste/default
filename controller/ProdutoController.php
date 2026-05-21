@@ -64,4 +64,11 @@ class ProdutoController extends Controller{
         $model->delete($id);
         $this->redirect("produto/listar");
     }
+
+    function items($id){
+        $model = new Produto();
+        $categorias = $model->categorias($id);
+
+        $this->view("produto/items",compact('categorias'));
+    }
 }

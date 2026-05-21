@@ -1,5 +1,29 @@
-<a href="<?php echo APP."/pagamento/listar"?>" class="btn btn-primary mb-3">Pagamentos</a>
-<a href="<?php echo APP."/categoria/listar"?>" class="btn btn-primary mb-3">Categoria</a>
-<a href="<?php echo APP."/usuario/listar"?>" class="btn btn-primary mb-3">Usuarios</a>
-<a href="<?php echo APP."/produto/listar"?>" class="btn btn-primary mb-3">Produtos</a>
-<a href="<?php echo APP."/carrinho/listar"?>" class="btn btn-primary mb-3">Carrinho</a>
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container-fluid">
+        <a href="<?php echo APP."/" ?>" class="navbar-brand">SaborLoja</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="<?php echo APP."/pagamento/listar"?>" class="nav-link">Pagamentos</a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php echo APP."/categoria/listar"?>" class="nav-link">Categoria</a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php echo APP."/usuario/listar"?>" class="nav-link">Usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php echo APP."/produto/listar"?>" class="nav-link">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php echo APP."/carrinho/listar"?>" class="nav-link">Carrinho</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>

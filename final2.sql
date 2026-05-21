@@ -5,7 +5,7 @@
 -- Dumped from database version 13.15
 -- Dumped by pg_dump version 16.3
 
--- Started on 2026-05-15 09:06:06
+-- Started on 2026-05-21 07:24:23
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -240,7 +240,7 @@ CREATE TABLE public.produtos (
     nome character varying(150) NOT NULL,
     preco numeric(10,2) NOT NULL,
     quantidade integer NOT NULL,
-    foto character varying(160)[]
+    foto character varying(160)
 );
 
 
@@ -372,8 +372,6 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usu
 -- Data for Name: carrinho; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.carrinho (id, usuario_id, total) FROM stdin;
-\.
 
 
 --
@@ -382,8 +380,6 @@ COPY public.carrinho (id, usuario_id, total) FROM stdin;
 -- Data for Name: categoria; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.categoria (id, cor, nome) FROM stdin;
-\.
 
 
 --
@@ -392,8 +388,6 @@ COPY public.categoria (id, cor, nome) FROM stdin;
 -- Data for Name: itens; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.itens (id, produto_id, carrinho_id, quantidade, preco) FROM stdin;
-\.
 
 
 --
@@ -402,8 +396,6 @@ COPY public.itens (id, produto_id, carrinho_id, quantidade, preco) FROM stdin;
 -- Data for Name: pagamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.pagamento (id, valor, data, taxa) FROM stdin;
-\.
 
 
 --
@@ -412,8 +404,6 @@ COPY public.pagamento (id, valor, data, taxa) FROM stdin;
 -- Data for Name: produto_categoria; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.produto_categoria (id, produto_id, categoria_id) FROM stdin;
-\.
 
 
 --
@@ -422,8 +412,6 @@ COPY public.produto_categoria (id, produto_id, categoria_id) FROM stdin;
 -- Data for Name: produtos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.produtos (id, nome, preco, quantidade, foto) FROM stdin;
-\.
 
 
 --
@@ -432,8 +420,6 @@ COPY public.produtos (id, nome, preco, quantidade, foto) FROM stdin;
 -- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.usuarios (id, nome, senha) FROM stdin;
-\.
 
 
 --
@@ -635,7 +621,7 @@ REVOKE USAGE ON SCHEMA public FROM PUBLIC;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2026-05-15 09:06:06
+-- Completed on 2026-05-21 07:24:23
 
 --
 -- PostgreSQL database dump complete

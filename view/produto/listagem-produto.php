@@ -11,6 +11,7 @@
                 <th scope="col">Preco</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Deletar</th>
+                <th scope="col">Items</th>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,7 @@
                             <td>".$produto["preco"]."</td>
                             <td><a class='btn btn-primary' href=".APP.'/produto/editar/'.$produto["id"].">Editar</a></td>
                             <td><a class='btn btn-danger' href=".APP.'/produto/deletar/'.$produto["id"].">X</a></td>
+                            <td><a class='btn btn-success' href=".APP.'/produto/items/'.$produto["id"].">Items</a></td>
                         </tr>
                     ";
                 }
